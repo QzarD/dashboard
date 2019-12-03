@@ -11,7 +11,7 @@ const Card = ({text, id, index, deleteCard, columnId}) => {
                      {...provided.dragHandleProps}
                 >
                     <div className={styles.card}>
-                        <div>
+                        <div className={styles.cardText}>
                             {text}
                         </div>
                         <div onClick={()=>{deleteCard(columnId, index)}} className={styles.btnDelete}>

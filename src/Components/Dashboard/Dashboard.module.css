@@ -17,11 +17,15 @@
     margin: 10px;
     height: 100%;
 }
-.nameColumn{
+.nameColumnRow{
     padding: 0 7px;
     color: black;
     display: flex;
     justify-content: space-between;
+    align-items: center;
+}
+.nameColumn{
+    font-size: 23px;
 }
 .btnDeleteColumn{
     cursor: pointer;

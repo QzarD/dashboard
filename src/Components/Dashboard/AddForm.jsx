@@ -32,16 +32,16 @@ const AddForm = ({column, addColumn, addCard, columnIndex}) => {
                         onChange={onChangeForm}
                         className={styles.form} name="textarea" id="textarea" cols="3"/>
                     </div>
-                    : <div onClick={openForm}>+ {column ? "Add column" : "Add card"}</div>
+                    : <div onClick={openForm} className="pointer">+ {column ? "Add column" : "Add card"}</div>
                 }
             </div>
             <div>
                 {form
                     ? <div className={styles.buttonRow}>
-                        <button onMouseDown={textForm? pushButton : null} variant="contained" className={styles.button}>
+                        <button onMouseDown={textForm? pushButton : null} variant="contained" className="pointer">
                             {column ? "Add column" : "Add card"}
                         </button>
-                        <div> X </div>
+                        <div className="pointer"> X </div>
                     </div>
                     : null}
 

@@ -8,7 +8,7 @@ import {addCard, addColumn, deleteCard, deleteColumn, sort} from "../../Redux/da
 
 const Dashboard = ({columns, addColumn, addCard, sort, deleteColumn, deleteCard}) => {
     const onDragEnd=(result)=>{
-        const {destination, source, draggableId, type} =result;
+        const {destination, source, type} =result;
         if (!destination){
             return
         }
@@ -17,7 +17,6 @@ const Dashboard = ({columns, addColumn, addCard, sort, deleteColumn, deleteCard}
             destination.droppableId,
             source.index,
             destination.index,
-            draggableId,
             type
         )
     };

@@ -1,13 +1,12 @@
-const ADD_COLUMN = 'dashboard2/ADD_COLUMN';
-const DELETE_COLUMN = 'dashboard2/DELETE_COLUMN';
-const ADD_CARD = 'dashboard2/ADD_CARD';
-const DELETE_CARD = 'dashboard2/DELETE_CARD';
-const DRAG_CARD = 'dashboard2/DRAG_CARD';
+const ADD_COLUMN = 'dashboard/ADD_COLUMN';
+const DELETE_COLUMN = 'dashboard/DELETE_COLUMN';
+const ADD_CARD = 'dashboard/ADD_CARD';
+const DELETE_CARD = 'dashboard/DELETE_CARD';
+const DRAG_CARD = 'dashboard/DRAG_CARD';
 
-let columnId = 1;
-let cardId = 4;
-let initialState = [
-];
+let columnId = 0;
+let cardId = 0;
+let initialState = [];
 
 export const dashboardReducer = (state = initialState, action) => {
     switch (action.type) {
@@ -23,7 +22,7 @@ export const dashboardReducer = (state = initialState, action) => {
                 if (column.id === action.columnIndex) {
                     return {
                         ...column,
-                        cards: [...column.cards, {id: cardId, text: action.text}]
+                        cards: [...column.cards, {id: `cardId-${cardId}`, text: action.text}]
                     }
                 }
                 return column
@@ -73,14 +72,12 @@ export const sort = (droppableIdStart,
                      droppableIdEnd,
                      droppableIdIndexStart,
                      droppableIdIndexEnd,
-                     draggableId,
                      typeDrag) => ({
     type: DRAG_CARD,
     droppableIdStart,
     droppableIdEnd,
     droppableIdIndexStart,
     droppableIdIndexEnd,
-    draggableId,
     typeDrag
 });
 export const deleteColumn=(index)=>({type:DELETE_COLUMN, index});

@@ -14,15 +14,16 @@ const Column = ({title, cards, addColumn, addCard, columnId, columnIndex, delete
                     <Droppable droppableId={String(columnId)}>
                         {provided => (
                             <div {...provided.droppableProps} ref={provided.innerRef}>
-                                <div className={styles.nameColumn}>
-                                    <h4>{title}</h4>
+                                <div className={styles.nameColumnRow}>
+                                    <div className={styles.nameColumn}>{title}</div>
                                     <span onClick={() => {
                                         deleteColumn(columnId)
                                     }} className={styles.btnDeleteColumn}>X</span>
                                 </div>
 
                                 {cards.map((card, index) => (
-                                    <Card deleteCard={deleteCard} columnId={columnId} index={index} id={card.id}
+                                    <Card deleteCard={deleteCard}
+                                          columnId={columnId} index={index} id={card.id}
                                           key={card.id} text={card.text}/>
                                 ))}
                                 {provided.placeholder}
