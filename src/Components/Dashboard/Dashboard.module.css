@@ -1,5 +1,5 @@
 .dashboardHome{
-    background: url(https://avatars.mds.yandex.net/get-zen_doc/1880383/pub_5d5d4e6905fd9803e2d95f4b_5d5d4fa304af1f00aeac0843/scale_1200);
+    background: url(https://i.artfile.me/wallpaper/17-02-2018/3182x1920/priroda-noch-oblaka-luna-voda-polnolunie-1306464.jpg) 50% 70%;
     width: 100%;
     height: 100vh;
     background-repeat: no-repeat;
@@ -10,11 +10,11 @@
     /*align-items: flex-start;*/
 }
 .column{
-    background-color: #a7a7a7;
-    width: 170px;
+    background-color: #e5e3ed;
+    width: 200px;
     padding-bottom: 5px;
-    border-radius: 5px;
-    margin: 10px;
+    border-radius: 3px;
+    margin: 10px 5px;
     height: 100%;
 }
 .nameColumnRow{
@@ -25,10 +25,17 @@
     align-items: center;
 }
 .nameColumn{
-    font-size: 23px;
+    font-weight: bold;
+    margin: 3px 0 5px 5px;
 }
 .btnDeleteColumn{
     cursor: pointer;
+    color: #c3c3c3;
+}
+
+.btnDeleteColumn:hover{
+    color: #000000;
+    transition: color 0.15s ease-in-out;
 }
 .btnAddCard{
     padding-left: 10px;
@@ -37,7 +44,7 @@
 .btnAddCard:hover{
     padding-left: 10px;
     cursor: pointer;
-    background-color: #737373;
+    background-color: #c6c4ce;
 }
 .sectionAddCard{
     padding: 0 10px;
@@ -57,24 +64,45 @@
 .btnCancelAddCard{
     cursor: pointer;
 }
-
+.addColumnCardText{
+    margin-left: 3px;
+    padding: 5px 0;
+    cursor: pointer;
+    color: #919191;
+}
+.addColumnCardBtn{
+    padding: 4px 10px;
+    letter-spacing: 1px;
+    background-color: #5bd169;
+    border-radius: 3px;
+    border: 1px solid #efefef;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+.addColumnCardBtn:hover{
+    background-color: #52af58;
+    transition: color 0.15s ease-in-out;
+}
 .form{
     resize: none;
     width: 100%;
     outline: none;
     border: none;
-    border-radius: 5px;
+    border-radius: 3px;
+    box-shadow: 0 0 4px #9a9a9a;
+    padding: 5px 9px;
+
 }
 .buttonContainer{
-    background-color: #a7a7a7;
-    border-radius: 5px;
-    width: 170px;
+    background-color: #e5e3ed;
+    border-radius: 3px;
+    width: 200px;
     height: 100%;
+    padding: 0 10px;
     margin-top: 10px;
 
 }
 .buttonRow{
-    display: flex;
-    justify-content: space-between;
-    margin: 0 10px;
+    padding: 4px 0;
 }

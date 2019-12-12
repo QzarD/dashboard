@@ -17,7 +17,7 @@ const AddForm = ({column, addColumn, addCard, columnIndex}) => {
     const pushButton=()=>{
         column
             ? addColumn(textForm)
-            : addCard(columnIndex, textForm)
+            : addCard(columnIndex, textForm); setForm(false); setTextFrom("")
     };
     return (
         <div className={styles.buttonContainer}>
@@ -25,23 +25,28 @@ const AddForm = ({column, addColumn, addCard, columnIndex}) => {
                 {form
                     ? <div>
                     <textarea
-                        placeholder={column ? "Enter text of new column" : "Enter text of new card"}
+                        placeholder={column
+                            ? "Enter text of a new column"
+                            : "Enter text of a new card"}
                         autoFocus={true}
                         onBlur={closeForm}
                         value={textForm}
                         onChange={onChangeForm}
+                        onKeyPress={e=>{if(e.key==="Enter"){pushButton()}}}
                         className={styles.form} name="textarea" id="textarea" cols="3"/>
                     </div>
-                    : <div onClick={openForm} className="pointer">+ {column ? "Add column" : "Add card"}</div>
+                    : <div onClick={openForm} className={styles.addColumnCardText}>
+                        + {column ? "Add column" : "Add card"}
+                    </div>
                 }
             </div>
             <div>
                 {form
                     ? <div className={styles.buttonRow}>
-                        <button onMouseDown={textForm? pushButton : null} variant="contained" className="pointer">
+                        <button onMouseDown={textForm? pushButton : null}
+                                variant="contained" className={styles.addColumnCardBtn}>
                             {column ? "Add column" : "Add card"}
                         </button>
-                        <div className="pointer"> X </div>
                     </div>
                     : null}
 

@@ -4,9 +4,26 @@ const ADD_CARD = 'dashboard/ADD_CARD';
 const DELETE_CARD = 'dashboard/DELETE_CARD';
 const DRAG_CARD = 'dashboard/DRAG_CARD';
 
-let columnId = 0;
-let cardId = 0;
-let initialState = [];
+let columnId = 3;
+let cardId = 5;
+let initialState = [
+    {title: 'Home',
+    id:'1',
+    cards:[
+        {id:'cardId-1', text:'Clean'},
+        {id:'cardId-2', text:'Cooking'},
+        {id:'cardId-3', text:'Go to the shop'}
+    ]},
+    {title: 'On work',
+    id:'2',
+    cards:[
+        {id:'cardId-4', text:'Coffee'},
+        {id:'cardId-5', text:'Working'}
+    ]},
+    {title: 'Shopping',
+    id:'3',
+    cards:[]}
+];
 
 export const dashboardReducer = (state = initialState, action) => {
     switch (action.type) {
